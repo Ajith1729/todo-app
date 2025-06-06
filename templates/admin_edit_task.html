@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h3>Edit Task (Admin)</h3>
+  <form method="POST">
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" name="title" id="title" class="form-control" value="{{ todo.title }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea name="description" id="description" class="form-control" rows="4" required>{{ todo.description }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{{ url_for('admin') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}
